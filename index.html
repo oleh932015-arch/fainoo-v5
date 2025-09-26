@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c0f13" />
+  <title>Fainoo — Flooring Installation</title>
+  <meta id="meta-desc" name="description" content="Fainoo: professional flooring installation in Edmonton. Labour-only pricing for laminate, LVP/LVT, engineered and solid hardwood, exotic species, refinishing, and more." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f141a'/%3E%3Cpath d='M18 36h12V18h8v18h8v8H18z' fill='%236fd3a8'/%3E%3C/svg%3E" />
+  <style>
+  :root{--bg:#0e0f12;--bg-alt:#14161b;--fg:#e9edf5;--muted:#c9ced9;--line:#2a2f3d;--brand:#6fd3a8}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1100px,92%);margin:auto}
+  .section{padding:50px 0}
+  .section.alt{background:var(--bg-alt)}
+  h1{color:#fff;margin:0 0 10px;font-size:clamp(26px,5vw,40px);line-height:1.25}
+  h2,h3{color:#fff;margin:0 0 12px;font-size:clamp(20px,3.6vw,28px)}
+  ul{margin:0;padding-left:20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;font-weight:700;min-height:44px}
+  .btn-primary{background:var(--brand);color:#000}
+  /* Header & Nav */
+  .site-header{background:#0c0f13;position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line)}
+  .header-inner{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0}
+  .brand{font-weight:800;letter-spacing:.4px}
+  .nav{display:block}
+  .nav ul{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+  .nav a{padding:8px 10px;border-radius:8px}
+  .nav a:active,.nav a:focus{outline:2px solid var(--brand);outline-offset:2px}
+  .nav-toggle{display:none;border:1px solid var(--line);background:#12161c;color:#fff;border-radius:10px;padding:10px 12px;font-size:18px;line-height:1}
+  .lang{display:flex;gap:6px;align-items:center}
+  .lang button{border:1px solid var(--line);background:#12161c;color:#fff;border-radius:10px;padding:8px 10px;min-height:36px;cursor:pointer}
+  .lang button[aria-pressed="true"]{outline:2px solid var(--brand);outline-offset:2px}
+  @media (max-width: 900px){
+    .nav-toggle{display:block}
+    .nav{display:none;position:fixed;right:4%;top:64px;background:#0c0f13;border:1px solid var(--line);border-radius:12px;padding:10px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .nav.open{display:block}
+    .nav ul{flex-direction:column;gap:8px}
+  }
+  /* HERO */
+  .hero.section{padding:36px 0}
+  .hero .container{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+  .hero .lead{color:var(--muted);margin:0 0 8px}
+  .hero .hero-media img{border-radius:12px;max-width:460px;width:100%;height:auto;display:block}
+  @media (min-width: 900px){
+    .hero .container{grid-template-columns:1.15fr .85fr;gap:28px}
+    .hero .hero-media{justify-self:end}
+  }
+  /* Table responsive wrapper */
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse}
+  th,td{border-bottom:1px solid var(--line);padding:12px;text-align:left;white-space:nowrap}
+  thead th{position:sticky;top:0;background:#0f1217}
+  /* Forms */
+  .form label{display:block;margin:10px 0}
+  input{width:100%;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:#fff;min-height:44px}
+  button{cursor:pointer}
+  .note{color:var(--muted);font-size:.95rem;margin-top:12px}
+  /* Footer */
+  .site-footer{background:#0c0f13;padding:20px 0;text-align:center;color:#aaa;border-top:1px solid var(--line)}
+  /* Accessibility helper for hidden text */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  /* Floating Call Button — circular at bottom-right */
+  .call-fab{
+    position:fixed;
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    z-index:50;
+    display:inline-flex; align-items:center; justify-content:center;
+    width:64px; height:64px; border-radius:50%;
+    background:var(--brand); color:#000; font-weight:800;
+    text-decoration:none; box-shadow:0 12px 34px rgba(0,0,0,.38);
+  }
+  .call-fab svg{width:28px;height:28px}
+  @media (min-width: 900px){
+    .call-fab{display:none}
+  }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Fainoo</a>
+      <div class="header-tools" style="display:flex;align-items:center;gap:10px">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav" onclick="toggleNav()">☰ Menu</button>
+        <div class="lang" role="group" aria-label="Language switcher">
+          <button id="btn-en" onclick="setLang('en')" aria-pressed="true">English</button>
+          <button id="btn-fr" onclick="setLang('fr')" aria-pressed="false">Français</button>
+        </div>
+      </div>
+      <nav id="nav" class="nav">
+        <ul>
+          <li><a href="#home" onclick="closeNav()" data-i18n="nav.home">Home</a></li>
+          <li><a href="#services" onclick="closeNav()" data-i18n="nav.services">Services</a></li>
+          <li><a href="#pricing" onclick="closeNav()" data-i18n="nav.prices">Prices</a></li>
+          <li><a href="#about" onclick="closeNav()" data-i18n="nav.about">About</a></li>
+          <li><a href="#why" onclick="closeNav()" data-i18n="nav.why">Why us</a></li>
+          <li><a href="#contact" onclick="closeNav()" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="section hero">
+      <div class="container">
+        <div>
+          <h1 data-i18n="hero.title">Quality flooring installation in Edmonton</h1>
+          <p class="lead" data-i18n="hero.lead">Professional installation of laminate, vinyl (LVP/LVT), and hardwood in Edmonton and area. Reliability, precision, and durability are our priorities.</p>
+          <a class="btn btn-primary" href="#contact" data-i18n="hero.cta">Get a quote</a>
+        </div>
+        <figure class="hero-media">
+          <img id="hero-img" src="https://tse1.mm.bing.net/th/id/OIP.Qg7oVs7IoRTLpU5HmELkZAAAAA?pid=Api"
+               alt="Flooring example"
+               onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 x2=%221%22%3E%3Cstop stop-color=%22%23222%22/%3E%3Cstop offset=%221%22 stop-color=%22%23333%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/%3E%3Ctext x=%2260%22 y=%2260%22 fill=%22%23c9ced9%22 font-family=%22Arial,sans-serif%22 font-size=%2232%22%3EImage unavailable%3C/text%3E%3C/svg%3E';" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2 data-i18n="services.title">Services</h2>
+        <ul id="services-list"></ul>
+      </div>
+    </section>
+
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2 data-i18n="pricing.title">Prices (labour only)</h2>
+        <div class="table-wrap">
+          <table class="pricing">
+            <thead>
+              <tr><th data-i18n="pricing.th_service">Service</th><th data-i18n="pricing.th_price">Price per ft²</th></tr>
+            </thead>
+            <tbody id="pricing-body"></tbody>
+          </table>
+        </div>
+        <p class="note" data-i18n="pricing.note">Prices vary with material, area, job complexity, and subfloor preparation. We always offer a free consultation and a tailored estimate for your project.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2 data-i18n="about.title">About Fainoo</h2>
+        <p data-i18n="about.body">We are an Edmonton-based team focused on quality. Every project is a chance to build a floor that serves for years and makes your home feel cozy and solid.</p>
+        <ul id="about-list"></ul>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="container">
+        <h2 data-i18n="why.title">Why choose Fainoo</h2>
+        <ul id="why-list"></ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div>
+          <h2 data-i18n="contact.title">Contact</h2>
+          <p>
+            <strong data-i18n="contact.phone_label">Phone:</strong> <a id="contact-phone" href="tel:+1XXXXXXXXXX">your number</a><br/>
+            <strong data-i18n="contact.email_label">Email:</strong> <a id="contact-email" href="mailto:you@example.com">your email</a><br/>
+            <strong data-i18n="contact.location_label">Location:</strong> <span data-i18n="contact.location_value">Edmonton, Canada</span>
+          </p>
+        </div>
+        <form class="form" onsubmit="handleSubmit(event)">
+          <label><span data-i18n="form.name">Name*</span> <input required name="name" autocomplete="name"/></label>
+          <label><span data-i18n="form.phone">Phone*</span> <input required name="phone" autocomplete="tel"/></label>
+          <button class="btn btn-primary" type="submit" data-i18n="form.send">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating mobile call button (circular) -->
+  <a id="call-fab" class="call-fab" href="tel:+1XXXXXXXXXX" aria-label="Call">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.11.37 2.3.57 3.53.57a1 1 0 011 1v3.5a1 1 0 01-1 1C11.85 20.02 3.98 12.15 3.98 2.5a1 1 0 011-1H8.5a1 1 0 011 1c0 1.23.2 2.42.57 3.53a1 1 0 01-.24 1.01l-2.2 2.2z" fill="#000"/>
+    </svg>
+    <span class="sr-only" data-i18n="fab.call">Call</span>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Fainoo. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <script>
+  // i18n dictionaries
+  const i18n = {
+    en: {
+      metaDesc: "Fainoo: professional flooring installation in Edmonton. Labour-only pricing for laminate, LVP/LVT, engineered and solid hardwood, exotic species, refinishing, and more.",
+      nav: {home:"Home", services:"Services", prices:"Prices", about:"About", why:"Why us", contact:"Contact"},
+      hero: {
+        title:"Quality flooring installation in Edmonton",
+        lead:"Professional installation of laminate, vinyl (LVP/LVT), and hardwood in Edmonton and area. Reliability, precision, and durability are our priorities.",
+        cta:"Get a quote",
+        alt:"Flooring example"
+      },
+      services: {
+        title:"Services",
+        list:[
+          "Flooring installation (straight lay, herringbone, chevron)",
+          "Laminate",
+          "Engineered wood",
+          "Solid hardwood",
+          "Vinyl LVP/LVT",
+          "Refinishing (sanding & coating)",
+          "Removal of old flooring"
+        ]
+      },
+      pricing: {
+        title:"Prices (labour only)",
+        th_service:"Service",
+        th_price:"Price per ft²",
+        rows:[
+          ["Straight lay without design (laminate/LVP)", "$2.00–$2.40"],
+          ["Removal of old flooring", "$1.00–$1.50"],
+          ["Complex patterns (herringbone/chevron)", "+ $1.00–$1.50"],
+          ["Laminate", "$2.00–$2.40"],
+          ["Vinyl LVP/LVT", "$1.70–$2.30"],
+          ["Engineered wood", "$3.50–$4.50"],
+          ["Solid hardwood", "$4.50–$6.00"],
+          ["Exotic species", "$5.50–$7.00"],
+          ["Refinishing (sanding & coating)", "$3.00–$4.50"]
+        ],
+        note:"Prices vary with material, area, job complexity, and subfloor preparation. We always offer a free consultation and a tailored estimate for your project."
+      },
+      about: {
+        title:"About Fainoo",
+        body:"We are an Edmonton-based team focused on quality. Every project is a chance to build a floor that serves for years and makes your home feel cozy and solid.",
+        list:["Attention to detail","Quality materials","On-time delivery","Transparent pricing"]
+      },
+      why: {
+        title:"Why choose Fainoo",
+        list:["✅ Free consultation before the job","✅ Help with material selection","✅ Work in Edmonton and surrounding area"]
+      },
+      contact:{
+        title:"Contact",
+        phone_label:"Phone:",
+        email_label:"Email:",
+        location_label:"Location:",
+        location_value:"Edmonton, Canada"
+      },
+      form:{name:"Name*", phone:"Phone*", send:"Send"},
+      footer:{rights:"All rights reserved."},
+      fab:{call:"Call", aria:"Call"}
+    },
+    fr: {
+      metaDesc: "Fainoo : service professionnel de pose de planchers à Edmonton. Tarifs de main-d'œuvre pour le stratifié, le vinyle LVP/LVT, le bois d'ingénierie et massif, les essences exotiques et la rénovation (sablage & finition).",
+      nav: {home:"Accueil", services:"Services", prices:"Tarifs", about:"À propos", why:"Pourquoi nous", contact:"Contact"},
+      hero: {
+        title:"Pose de planchers de qualité à Edmonton",
+        lead:"Installation professionnelle de stratifié, vinyle (LVP/LVT) et bois franc à Edmonton et dans les environs. Fiabilité, précision et durabilité.",
+        cta:"Obtenir une estimation",
+        alt:"Exemple de plancher"
+      },
+      services: {
+        title:"Services",
+        list:[
+          "Pose de revêtements (pose droite, à bâtons rompus/herringbone, chevron)",
+          "Stratifié",
+          "Bois d'ingénierie",
+          "Bois massif",
+          "Vinyle LVP/LVT",
+          "Rénovation (sablage & finition)",
+          "Dépose de l'ancien revêtement"
+        ]
+      },
+      pricing: {
+        title:"Tarifs (main-d'œuvre seulement)",
+        th_service:"Service",
+        th_price:"Prix par pi²",
+        rows:[
+          ["Pose droite sans design (stratifié/LVP)", "2,00–2,40 $"],
+          ["Dépose de l'ancien revêtement", "1,00–1,50 $"],
+          ["Schémas complexes (bâtons rompus/chevron)", "+ 1,00–1,50 $"],
+          ["Stratifié", "2,00–2,40 $"],
+          ["Vinyle LVP/LVT", "1,70–2,30 $"],
+          ["Bois d'ingénierie", "3,50–4,50 $"],
+          ["Bois massif (Hardwood)", "4,50–6,00 $"],
+          ["Essences exotiques", "5,50–7,00 $"],
+          ["Rénovation (sablage & finition)", "3,00–4,50 $"]
+        ],
+        note:"Les prix varient selon le matériau, la surface, la complexité des travaux et la préparation du support. Consultation gratuite et estimation personnalisée pour votre projet."
+      },
+      about: {
+        title:"À propos de Fainoo",
+        body:"Nous sommes une équipe d’Edmonton axée sur la qualité. Chaque projet est l’occasion de créer un plancher durable qui met votre maison en valeur.",
+        list:["Sens du détail","Matériaux de qualité","Respect des délais","Tarification transparente"]
+      },
+      why: {
+        title:"Pourquoi choisir Fainoo",
+        list:["✅ Consultation gratuite avant les travaux","✅ Aide au choix des matériaux","✅ Intervention à Edmonton et dans les environs"]
+      },
+      contact:{
+        title:"Contact",
+        phone_label:"Téléphone :",
+        email_label:"Courriel :",
+        location_label:"Localisation :",
+        location_value:"Edmonton, Canada"
+      },
+      form:{name:"Nom*", phone:"Téléphone*", send:"Envoyer"},
+      footer:{rights:"Tous droits réservés."},
+      fab:{call:"Appeler", aria:"Appeler"}
+    }
+  };
+
+  function renderLists(lang){
+    // Services
+    const sList = document.getElementById('services-list'); sList.innerHTML='';
+    i18n[lang].services.list.forEach(t=>{
+      const li=document.createElement('li'); li.textContent=t; sList.appendChild(li);
+    });
+    // Pricing rows
+    const pBody = document.getElementById('pricing-body'); pBody.innerHTML='';
+    i18n[lang].pricing.rows.forEach(([svc, price])=>{
+      const tr=document.createElement('tr');
+      const td1=document.createElement('td'); td1.innerHTML = "<strong>"+svc+"</strong>";
+      const td2=document.createElement('td'); td2.textContent = price;
+      tr.append(td1,td2); pBody.appendChild(tr);
+    });
+    // About bullets
+    const aList = document.getElementById('about-list'); aList.innerHTML='';
+    i18n[lang].about.list.forEach(t=>{
+      const li=document.createElement('li'); li.textContent=t; aList.appendChild(li);
+    });
+    // Why bullets
+    const wList = document.getElementById('why-list'); wList.innerHTML='';
+    i18n[lang].why.list.forEach(t=>{
+      const li=document.createElement('li'); li.textContent=t; wList.appendChild(li);
+    });
+  }
+
+  function syncCallHref(){
+    const phone = document.getElementById('contact-phone');
+    const fab = document.getElementById('call-fab');
+    if(phone && fab && phone.href.startsWith('tel:')){
+      fab.href = phone.href;
+    }
+  }
+
+  function setLang(lang){
+    // Toggle buttons
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en'?'true':'false');
+    document.getElementById('btn-fr').setAttribute('aria-pressed', lang==='fr'?'true':'false');
+    // Update static text nodes with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const path = el.getAttribute('data-i18n').split('.');
+      let obj = i18n[lang];
+      path.forEach(p=>{ if(obj) obj = obj[p]; });
+      if(typeof obj === 'string'){ el.textContent = obj; }
+    });
+    // Update FAB aria-label
+    const fab = document.getElementById('call-fab');
+    fab.setAttribute('aria-label', i18n[lang].fab.aria);
+    // Lists & table rows
+    renderLists(lang);
+    // Alt text for image
+    document.getElementById('hero-img').setAttribute('alt', i18n[lang].hero.alt);
+    // Meta description and <html lang>
+    document.getElementById('meta-desc').setAttribute('content', i18n[lang].metaDesc);
+    document.documentElement.setAttribute('lang', lang==='en'?'en-CA':'fr-CA');
+    // Save and set global for form messages
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+  }
+
+  // Mobile nav
+  function toggleNav(){
+    var nav = document.getElementById('nav');
+    var btn = document.querySelector('.nav-toggle');
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeNav(){
+    var nav = document.getElementById('nav');
+    var btn = document.querySelector('.nav-toggle');
+    if(nav.classList.contains('open')){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  }
+
+  // Form
+  function handleSubmit(e){
+    e.preventDefault();
+    alert(currentLang==='fr' ? 'Merci! Nous vous contacterons.' : 'Thanks! We will contact you.');
+  }
+
+  // Init
+  let currentLang = localStorage.getItem('lang') || 'en';
+  document.getElementById('year').textContent = new Date().getFullYear();
+  setLang(currentLang);
+  syncCallHref();
+  </script>
+</body>
+</html>

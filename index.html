@@ -53,11 +53,6 @@
   table{width:100%;border-collapse:collapse}
   th,td{border-bottom:1px solid var(--line);padding:12px;text-align:left;white-space:nowrap}
   thead th{position:sticky;top:0;background:#0f1217}
-  /* Forms */
-  .form label{display:block;margin:10px 0}
-  input{width:100%;padding:12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:#fff;min-height:44px}
-  button{cursor:pointer}
-  .note{color:var(--muted);font-size:.95rem;margin-top:12px}
   /* Footer */
   .site-footer{background:#0c0f13;padding:20px 0;text-align:center;color:#aaa;border-top:1px solid var(--line)}
   /* Accessibility helper for hidden text */
@@ -161,22 +156,21 @@
         <div>
           <h2 data-i18n="contact.title">Contact</h2>
           <p>
-            <strong data-i18n="contact.phone_label">Phone:</strong> <a id="contact-phone" href="tel:+1XXXXXXXXXX">your number</a><br/>
-            <strong data-i18n="contact.email_label">Email:</strong> <a id="contact-email" href="mailto:you@example.com">your email</a><br/>
-            <strong data-i18n="contact.location_label">Location:</strong> <span data-i18n="contact.location_value">Edmonton, Canada</span>
+            <strong data-i18n="contact.phone_label">Phone:</strong>
+            <a id="contact-phone" href="tel:+15873418998">(587) 341-8998</a><br/>
+            <strong data-i18n="contact.email_label">Email:</strong>
+            <a id="contact-email" href="mailto:fainoo.contact@gmail.com">fainoo.contact@gmail.com</a><br/>
+            <strong data-i18n="contact.location_label">Location:</strong>
+            <span data-i18n="contact.location_value">Edmonton, Canada</span>
           </p>
         </div>
-        <form class="form" onsubmit="handleSubmit(event)">
-          <label><span data-i18n="form.name">Name*</span> <input required name="name" autocomplete="name"/></label>
-          <label><span data-i18n="form.phone">Phone*</span> <input required name="phone" autocomplete="tel"/></label>
-          <button class="btn btn-primary" type="submit" data-i18n="form.send">Send</button>
-        </form>
+        <!-- Form removed per user request -->
       </div>
     </section>
   </main>
 
   <!-- Floating mobile call button (circular) -->
-  <a id="call-fab" class="call-fab" href="tel:+1XXXXXXXXXX" aria-label="Call">
+  <a id="call-fab" class="call-fab" href="tel:+15873418998" aria-label="Call">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.11.37 2.3.57 3.53.57a1 1 0 011 1v3.5a1 1 0 01-1 1C11.85 20.02 3.98 12.15 3.98 2.5a1 1 0 011-1H8.5a1 1 0 011 1c0 1.23.2 2.42.57 3.53a1 1 0 01-.24 1.01l-2.2 2.2z" fill="#000"/>
     </svg>
@@ -190,10 +184,10 @@
   </footer>
 
   <script>
-  // i18n dictionaries
+  // i18n dictionaries (updated fixed prices)
   const i18n = {
     en: {
-      metaDesc: "Fainoo: professional flooring installation in Edmonton. Labour-only pricing for laminate, LVP/LVT, engineered and solid hardwood, exotic species, refinishing, and more.",
+      metaDesc: "Fainoo: professional flooring installation in Edmonton. Labour-only fixed pricing for laminate, LVP/LVT, engineered and solid hardwood, exotic species, refinishing, and more.",
       nav: {home:"Home", services:"Services", prices:"Prices", about:"About", why:"Why us", contact:"Contact"},
       hero: {
         title:"Quality flooring installation in Edmonton",
@@ -218,15 +212,15 @@
         th_service:"Service",
         th_price:"Price per ft²",
         rows:[
-          ["Straight lay without design (laminate/LVP)", "$2.00–$2.40"],
-          ["Removal of old flooring", "$1.00–$1.50"],
-          ["Complex patterns (herringbone/chevron)", "+ $1.00–$1.50"],
-          ["Laminate", "$2.00–$2.40"],
-          ["Vinyl LVP/LVT", "$1.70–$2.30"],
-          ["Engineered wood", "$3.50–$4.50"],
-          ["Solid hardwood", "$4.50–$6.00"],
-          ["Exotic species", "$5.50–$7.00"],
-          ["Refinishing (sanding & coating)", "$3.00–$4.50"]
+          ["Straight lay without design (laminate/LVP)", "$2.20/ft²"],
+          ["Removal of old flooring", "$1.25/ft²"],
+          ["Complex patterns (herringbone/chevron)", "+ $1.25/ft²"],
+          ["Laminate", "$2.20/ft²"],
+          ["Vinyl LVP/LVT", "$2.00/ft²"],
+          ["Engineered wood", "$4.00/ft²"],
+          ["Solid hardwood", "$5.00/ft²"],
+          ["Exotic species", "$6.00/ft²"],
+          ["Refinishing (sanding & coating)", "$4.00/ft²"]
         ],
         note:"Prices vary with material, area, job complexity, and subfloor preparation. We always offer a free consultation and a tailored estimate for your project."
       },
@@ -246,12 +240,11 @@
         location_label:"Location:",
         location_value:"Edmonton, Canada"
       },
-      form:{name:"Name*", phone:"Phone*", send:"Send"},
       footer:{rights:"All rights reserved."},
       fab:{call:"Call", aria:"Call"}
     },
     fr: {
-      metaDesc: "Fainoo : service professionnel de pose de planchers à Edmonton. Tarifs de main-d'œuvre pour le stratifié, le vinyle LVP/LVT, le bois d'ingénierie et massif, les essences exotiques et la rénovation (sablage & finition).",
+      metaDesc: "Fainoo : service professionnel de pose de planchers à Edmonton. Tarifs fixes (main-d'œuvre) pour le stratifié, le vinyle LVP/LVT, le bois d'ingénierie et massif, les essences exotiques et la rénovation (sablage & finition).",
       nav: {home:"Accueil", services:"Services", prices:"Tarifs", about:"À propos", why:"Pourquoi nous", contact:"Contact"},
       hero: {
         title:"Pose de planchers de qualité à Edmonton",
@@ -276,15 +269,15 @@
         th_service:"Service",
         th_price:"Prix par pi²",
         rows:[
-          ["Pose droite sans design (stratifié/LVP)", "2,00–2,40 $"],
-          ["Dépose de l'ancien revêtement", "1,00–1,50 $"],
-          ["Schémas complexes (bâtons rompus/chevron)", "+ 1,00–1,50 $"],
-          ["Stratifié", "2,00–2,40 $"],
-          ["Vinyle LVP/LVT", "1,70–2,30 $"],
-          ["Bois d'ingénierie", "3,50–4,50 $"],
-          ["Bois massif (Hardwood)", "4,50–6,00 $"],
-          ["Essences exotiques", "5,50–7,00 $"],
-          ["Rénovation (sablage & finition)", "3,00–4,50 $"]
+          ["Pose droite sans design (stratifié/LVP)", "2,20 $/pi²"],
+          ["Dépose de l'ancien revêtement", "1,25 $/pi²"],
+          ["Schémas complexes (bâtons rompus/chevron)", "+ 1,25 $/pi²"],
+          ["Stratifié", "2,20 $/pi²"],
+          ["Vinyle LVP/LVT", "2,00 $/pi²"],
+          ["Bois d'ingénierie", "4,00 $/pi²"],
+          ["Bois massif (Hardwood)", "5,00 $/pi²"],
+          ["Essences exotiques", "6,00 $/pi²"],
+          ["Rénovation (sablage & finition)", "4,00 $/pi²"]
         ],
         note:"Les prix varient selon le matériau, la surface, la complexité des travaux et la préparation du support. Consultation gratuite et estimation personnalisée pour votre projet."
       },
@@ -304,7 +297,6 @@
         location_label:"Localisation :",
         location_value:"Edmonton, Canada"
       },
-      form:{name:"Nom*", phone:"Téléphone*", send:"Envoyer"},
       footer:{rights:"Tous droits réservés."},
       fab:{call:"Appeler", aria:"Appeler"}
     }
@@ -365,7 +357,7 @@
     // Meta description and <html lang>
     document.getElementById('meta-desc').setAttribute('content', i18n[lang].metaDesc);
     document.documentElement.setAttribute('lang', lang==='en'?'en-CA':'fr-CA');
-    // Save and set global for form messages
+    // Save and set global
     currentLang = lang;
     localStorage.setItem('lang', lang);
   }
@@ -384,12 +376,6 @@
       nav.classList.remove('open');
       btn.setAttribute('aria-expanded','false');
     }
-  }
-
-  // Form
-  function handleSubmit(e){
-    e.preventDefault();
-    alert(currentLang==='fr' ? 'Merci! Nous vous contacterons.' : 'Thanks! We will contact you.');
   }
 
   // Init
